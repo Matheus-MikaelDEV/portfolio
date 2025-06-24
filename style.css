@@ -1,0 +1,293 @@
+body {
+  font-family: 'WDXL Lubrifont SC', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #3a2061, #412568, #a156e6);
+  background-size: 100% 100%;
+}
+
+/* Menu responsivo */
+body:not(.menu-open) .menu-btn {
+  left: 20px; /* botão no canto quando menu fechado */
+  transition: left 0.3s ease;
+}
+
+body.menu-open .menu-btn {
+  left: 270px; /* botão ao lado da sidebar */
+  transition: left 0.3s ease;
+}
+
+
+/* Move conteúdo e cabeçalhos quando menu aberto */
+body.menu-open .main-content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+body.menu-open .cabeçalho,
+body.menu-open .cabeçalhopt2 {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Cabeçalho */
+.cabeçalho {
+  height: 100px;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cabeçalho secundário */
+.cabeçalhopt2 {
+  height: 50px;
+  background-color: rgb(221, 221, 221);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer fixo */
+footer {
+  background-color: #3a2061;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #271246;
+  color: white;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Sidebar oculta */
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* Lista do menu */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #3a2061;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+
+/* Botão menu */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 270px; /* 250px da sidebar + 20px de espaçamento */
+  z-index: 1100;
+  background-color: #271246;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #a156e6;
+  transform: scale(1.05);
+}
+
+
+/* Conteúdo principal */
+.main-content {
+  flex-grow: 1; /* isso faz o conteúdo expandir e empurrar o footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+/* Box central */
+.box-central {
+  background-color: white;
+  width: 400px;
+  height: 480px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.box-central:hover {
+  transform: scale(1.05);
+}
+
+.box-central ul {
+  list-style-position: inside;
+  text-align: left;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.box-central li {
+  margin-bottom: 10px;
+}
+
+/* Botão no box central*/
+.box-central button {
+  background-color: #412568;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.box-central button:hover {
+  background-color: #a156e6;
+  transform: scale(1.05);
+}
+
+.box-central button:active {
+  transform: scale(0.98);
+}
+
+
+/* Ícones */
+.java-logo, .fa-users, .fa-code, .fa-terminal, .fa-computer {
+  font-size: 50px;
+  margin-top: 30px;
+  color: #3a2061;
+}
+
+/* Lista com ícones */
+.lista-icone {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.lista-icone li::before {
+  content: "✔️";
+  margin-right: 8px;
+}
+
+.lista-icone2 {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-icone2 li::before {
+  content: "⚠️";
+}
+
+/*botões de abrir nova guia*/
+.botao-link {
+  display: inline-block;
+  background-color: #412568;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.botao-link:hover {
+  background-color: #a156e6;
+  transform: scale(1.05);
+}
+
+/*parte de contato*/
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.redes-sociais a {
+  margin: 10px;
+  font-size: 1.5rem;
+  color: #412568;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.redes-sociais a:hover {
+  color: #a156e6;
+  transform: scale(1.1);
+}
+
+/*redes sociais do footer*/
+.redes-sociais-footer a {
+  margin: 10px;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.redes-sociais-footer a:hover {
+  color: #a156e6;
+  transform: scale(1.1);
+}
